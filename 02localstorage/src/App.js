@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
 
+// -----------------------------
+// ②Get data from localstorage
+// -----------------------------
+const getLocalLists = () => {
+  let list = localStorage.getItem("lists");
+  console.log(list);
+  
+// ④JSON.parse()でJSONに変換する文字列とすることで、JavaScriptのオブジェクトを返す
+  if (list) {
+    return JSON.parse(localStorage.getItem("lists"));
+  } else {
+    return [];
+  }
+};
+
 const App = () => {
-  const [todoList, setTodoList] = useState([]);
+  // ③todoListはgetLocalLists()
+  const [todoList, setTodoList] = useState(getLocalLists());
   const [todo, setTodo] = useState("");
   const [editingId, setEditingId] = useState("");
   const [editingText, setEditingText] = useState("");
@@ -47,9 +63,12 @@ const App = () => {
     setEditingText("");
   };
 
-// ----------------------------------------------
-// Add data to localstorage 
-// --------------------------------------
+  // -----------------------------
+  // ①Add data to localstorage
+  // -----------------------------
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(todoList));
+  }, [todoList]);
 
   return (
     <div className="app_container">
@@ -101,4 +120,3 @@ const App = () => {
 };
 
 export default App;
-
