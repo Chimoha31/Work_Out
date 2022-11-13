@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 const App = () => {
   const [todoList, setTodoList] = useState([]);
   const [todo, setTodo] = useState("");
-  const [editingId, setEditingId] = useState();
+  const [editingId, setEditingId] = useState("");
   const [editingText, setEditingText] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
@@ -13,7 +13,6 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todo === "") return;
-
     setTodoList([...todoList, { id: uuidv4(), text: todo }]);
     setTodo("");
   };
@@ -31,6 +30,7 @@ const App = () => {
   };
 
   const handleEdit = (id) => {
+    // const updatedTodo = todoList.map((todo) => {
     const updatedTodo = [...todoList].map((todo) => {
       if (todo.id === id) {
         todo.text = editingText;
@@ -41,14 +41,12 @@ const App = () => {
     setEditingText("");
     setIsEditing(false);
   };
-  
+
   const handleCancel = (id) => {
     setIsEditing(false);
     setEditingText("");
   };
 
-  console.log(todoList);
-  console.group(editingId);
 
   return (
     <div className="app_container">
