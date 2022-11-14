@@ -8,8 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 const getLocalLists = () => {
   let list = localStorage.getItem("lists");
   console.log(list);
-  
-// ④JSON.parse()でJSONに変換する文字列とすることで、JavaScriptのオブジェクトを返す
+// ④JSON.parse()でJSONに変換する文字列とすることで、JavaScriptのオブジェクトを返す。
   if (list) {
     return JSON.parse(localStorage.getItem("lists"));
   } else {
