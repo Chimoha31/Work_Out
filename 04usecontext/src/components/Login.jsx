@@ -1,8 +1,17 @@
-import React, { useState } from "react";
-import '../App.css';
+import React, { useContext } from "react";
+import "../App.css";
+import { LoginContext } from "../Contexts/LoginContext";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const { username, setUsername, setShowProfile } = useContext(LoginContext);
+
+  const handleLogin = () => {
+    if (username) {
+      setShowProfile(true);
+    } else {
+      alert("Please enter username");
+    }
+  };
 
   return (
     <div className="login_container">
@@ -13,9 +22,7 @@ const Login = () => {
         onChange={(e) => setUsername(e.target.value)}
       />
       <input type="password" placeholder="Password" />
-      <button>LOGIN</button>
-
-      {/* {showProfile && <h1>{username}</h1>} */}
+      <button onClick={handleLogin}>LOGIN</button>
     </div>
   );
 };
