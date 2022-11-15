@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
+import Challenge01 from "./challenge/Challenge01";
 
 // -------------------------
 // Functional Component
@@ -37,24 +38,26 @@ export default class App extends React.Component {
     goOut: "Yes",
   };
 
-  toggleGoOut() {
-    console.log("Clicked");
-    setGoOut((prev) => {
-      return prev === "Yes" ? "No" : "Yes";
+  toggleGoOut = () => {
+    this.setState((prev) => {
+      return {
+        goOut: prev.goOut === "Yes" ? "No" : "Yes",
+      };
     });
-  }
+  };
 
   render() {
     return (
-      <div>
+      <div className="goOut_container">
         <p>Class Component</p>
         <h1>Q: Should I go out tonight?</h1>
-        <button className="button1" onClick={this.toggleGoOut}>
-          {this.state.goOut}
-        </button>
-        <div>
+        <div className="goOut_button" onClick={this.toggleGoOut}>
           <h1>A: {this.state.goOut}</h1>
         </div>
+
+        <p>---------------------------------------------------------------------------</p>
+        {/* Challenge */}
+        <Challenge01 />
       </div>
     );
   }
