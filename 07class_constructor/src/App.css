@@ -1,0 +1,41 @@
+.button1 {
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: rgb(72, 182, 182);
+  color: #fff;
+}
+
+.goOut_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goOut_button {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 136, 228);
+  box-shadow: 3px 3px 3px rgb(139, 139, 139);
+  cursor: pointer;
+}
+
+.count_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.count_container button {
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+}
