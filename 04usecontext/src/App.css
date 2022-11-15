@@ -1,0 +1,30 @@
+.App {
+  background-color: antiquewhite;
+  height: 100vh;
+}
+
+.login_container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login_container input {
+  margin: 10px;
+  width: 200px;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  background-color: teal;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px rgb(172, 172, 172);
+  cursor: pointer;
+}
