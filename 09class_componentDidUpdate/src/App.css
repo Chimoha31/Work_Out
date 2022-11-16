@@ -1,0 +1,25 @@
+.form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 250px;
+  height: 35px;
+  margin: 10px 0;
+}
+
+textarea {
+  width: 250px;
+  height: 100px;
+}
